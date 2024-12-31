@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const services = [
+  {
+    title: 'Residential Design',
+    description: 'Custom home design that perfectly balances aesthetics with functionality. We create spaces that reflect your lifestyle and preferences.',
+    features: [
+      'Custom home design',
+      'Space planning',
+      'Sustainable architecture',
+      'Building regulations compliance',
+    ],
+  },
+  {
+    title: 'Interior Design',
+    description: 'Comprehensive interior design services that transform spaces into beautiful, functional environments.',
+    features: [
+      'Space planning',
+      'Material selection',
+      'Furniture layout',
+      'Lighting design',
+    ],
+  },
+  {
+    title: 'Facade & Elevation',
+    description: 'Creating striking exterior designs that make a lasting impression while maintaining architectural integrity.',
+    features: [
+      'Facade design',
+      'Material selection',
+      'Structural integration',
+      '3D visualization',
+    ],
+  },
+];
+---
+
+<Layout title="Services - ArchStudio">
+  <PageHeader 
+    title="Our Services" 
+    subtitle="Comprehensive architectural solutions for your needs"
+  />
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="space-y-20">
+      {services.map(service => (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="font-playfair text-3xl mb-4">{service.title}</h2>
+            <p class="mb-6">{service.description}</p>
+            <ul class="space-y-2">
+              {service.features.map(feature => (
+                <li class="flex items-center">
+                  <span class="text-arch-accent mr-2">•</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-8">
+            <img
+              src={`/services/${service.title.toLowerCase().replace(' ', '-')}.jpg`}
+              alt={service.title}
+              class="w-full h-64 object-cover rounded-lg"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

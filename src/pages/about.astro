@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const team = [
+  {
+    name: 'Sarah Johnson',
+    role: 'Principal Architect',
+    image: '/team/sarah-johnson.jpg',
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Senior Architect',
+    image: '/team/michael-chen.jpg',
+  },
+  {
+    name: 'Emma Williams',
+    role: 'Interior Designer',
+    image: '/team/emma-williams.jpg',
+  },
+];
+---
+
+<Layout title="About - ArchStudio">
+  <PageHeader 
+    title="About Us" 
+    subtitle="Creating timeless spaces since 2010"
+  />
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
+      <div>
+        <h2 class="font-playfair text-3xl mb-6">Our Story</h2>
+        <div class="space-y-4">
+          <p>Founded in 2010, ArchStudio has been at the forefront of residential architecture, creating spaces that seamlessly blend contemporary and classical design elements.</p>
+          <p>Our approach combines innovative design thinking with traditional architectural principles, resulting in homes that are both timeless and forward-thinking.</p>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded-lg p-8">
+        <img
+          src="/about/studio.jpg"
+          alt="ArchStudio workspace"
+          class="w-full h-64 object-cover rounded-lg"
+        />
+      </div>
+    </div>
+
+    <h2 class="font-playfair text-3xl mb-12 text-center">Our Team</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {team.map(member => (
+        <div class="text-center">
+          <img
+            src={member.image}
+            alt={member.name}
+            class="w-48 h-48 rounded-full mx-auto mb-4 object-cover"
+          />
+          <h3 class="font-playfair text-xl mb-2">{member.name}</h3>
+          <p class="text-arch-accent">{member.role}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>

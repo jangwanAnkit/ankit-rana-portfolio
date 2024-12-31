@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Contact - ArchStudio">
+  <PageHeader 
+    title="Contact Us" 
+    subtitle="Let's discuss your next project"
+  />
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <div>
+        <h2 class="font-playfair text-3xl mb-6">Get in Touch</h2>
+        <div class="space-y-4">
+          <p>We're here to help bring your vision to life. Contact us to discuss your project or schedule a consultation.</p>
+          <div class="space-y-2">
+            <p><strong>Email:</strong> info@archstudio.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+            <p><strong>Address:</strong> 123 Design Street, Architecture City</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ContactForm />
+      </div>
+    </div>
+  </div>
+</Layout>

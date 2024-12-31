@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: 'Modern Villa',
+    description: 'Contemporary residential design with sustainable features',
+    image: '/projects/modern-villa.jpg',
+    category: 'Contemporary',
+  },
+  {
+    title: 'Classical Manor',
+    description: 'Traditional architecture with modern amenities',
+    image: '/projects/classical-manor.jpg',
+    category: 'Classical',
+  },
+  {
+    title: 'Urban Residence',
+    description: 'Sophisticated city living with elegant interiors',
+    image: '/projects/urban-residence.jpg',
+    category: 'Contemporary',
+  },
+  {
+    title: 'Coastal Retreat',
+    description: 'Beachfront property with panoramic ocean views',
+    image: '/projects/coastal-retreat.jpg',
+    category: 'Contemporary',
+  },
+  {
+    title: 'Heritage House',
+    description: 'Restoration and modernization of a historic property',
+    image: '/projects/heritage-house.jpg',
+    category: 'Classical',
+  },
+  {
+    title: 'Mountain Lodge',
+    description: 'Modern interpretation of traditional mountain architecture',
+    image: '/projects/mountain-lodge.jpg',
+    category: 'Contemporary',
+  },
+];
+---
+
+<Layout title="Projects - ArchStudio">
+  <PageHeader 
+    title="Our Projects" 
+    subtitle="A showcase of our finest residential designs"
+  />
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {projects.map(project => <ProjectCard {...project} />)}
+    </div>
+  </div>
+</Layout>
