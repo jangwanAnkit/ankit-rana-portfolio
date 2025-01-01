@@ -1,0 +1,89 @@
+---
+
+interface Props {
+  title: string;
+  subtitle: string;
+  ctaText: string;
+  ctaLink: string;
+  backgroundImage: string;
+  backgroundImageAlt?: string;
+}
+
+const { 
+  title = "Crafting Elegant Living Spaces",
+  subtitle = "Specializing in contemporary and classical residential architecture, creating homes that blend beauty with functionality.",
+  ctaText = "Start Your Project",
+  ctaLink = "/contact",
+  backgroundImage = "/images/hero-bg.jpg",
+  backgroundImageAlt = "Modern architectural design showcase"
+} = Astro.props;
+---
+
+<section class="relative h-screen flex items-center overflow-hidden">
+  <!-- Background Image -->
+  <div 
+    class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
+    style={`background-image: url(${backgroundImage})`}
+    role="img"
+    aria-label={backgroundImageAlt}
+  >
+  </div>
+  
+  <!-- Overlay with improved gradient -->
+  <div class="absolute inset-0 bg-gradient-to-r from-arch-dark/70 to-arch-dark/40"></div>
+  
+  <!-- Content with enhanced responsive design -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-arch-light">
+    <div class="space-y-6 md:space-y-8">
+      <h1 
+        class="font-playfair text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight animate-fade-in"
+      >
+        {title.split(' ').map((word, i) => (
+          <span 
+            class="inline-block hover:text-arch-accent transition-colors duration-300"
+            style={`animation-delay: ${i * 0.1}s`}
+          >
+            {word}{' '}
+          </span>
+        ))}
+      </h1>
+      
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl animate-slide-up opacity-90">
+        {subtitle}
+      </p>
+      
+      <a 
+        href={ctaLink}
+        class="inline-block bg-arch-accent px-8 py-4 text-arch-light text-lg
+               hover:bg-arch-light hover:text-arch-dark
+               transform hover:scale-105 transition-all duration-300
+               shadow-lg hover:shadow-xl
+               rounded-sm"
+      >
+        {ctaText}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+</style> 

@@ -1,24 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Layout from '../layouts/Layout.astro';
 
 const featuredProjects = [
   {
     title: 'Modern Villa',
     description: 'Contemporary residential design with sustainable features',
-    image: '/projects/modern-villa.jpg',
+    image: '/images/projects/modern-villa.jpg',
     category: 'Contemporary',
   },
   {
     title: 'Classical Manor',
     description: 'Traditional architecture with modern amenities',
-    image: '/projects/classical-manor.jpg',
+    image: '/images/projects/classical-manor.jpg',
     category: 'Classical',
   },
   {
     title: 'Urban Residence',
     description: 'Sophisticated city living with elegant interiors',
-    image: '/projects/urban-residence.jpg',
+    image: '/images/projects/urban-residence.jpg',
     category: 'Contemporary',
   },
 ];
@@ -26,25 +27,15 @@ const featuredProjects = [
 
 <Layout title="ArchStudio - Residential Architecture & Design">
   <main>
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center">
-      <div class="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center"></div>
-      <div class="absolute inset-0 bg-arch-dark/50"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-arch-light">
-        <h1 class="font-playfair text-5xl md:text-7xl mb-6">
-          Crafting Elegant <br />
-          Living Spaces
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 max-w-2xl">
-          Specializing in contemporary and classical residential architecture, 
-          creating homes that blend beauty with functionality.
-        </p>
-        <a href="/contact" class="inline-block bg-arch-accent px-8 py-3 text-arch-light hover:bg-arch-dark transition-colors">
-          Start Your Project
-        </a>
-      </div>
-    </section>
-
+    <Hero 
+      title="Crafting Elegant Living Spaces"
+      subtitle="Specializing in contemporary and classical residential architecture, creating homes that blend beauty with functionality."
+      ctaText="Start Your Project"
+      ctaLink="/contact"
+      backgroundImage="/images/hero-bg.jpg"
+      backgroundImageAlt="Modern architectural masterpiece with elegant design"
+    />
+    
     <!-- Services Section -->
     <section class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
