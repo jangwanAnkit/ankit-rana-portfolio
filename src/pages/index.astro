@@ -1,31 +1,32 @@
 ---
 import Hero from '../components/Hero.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import Services from '../components/Services.astro';
 import Layout from '../layouts/Layout.astro';
 
 const featuredProjects = [
   {
     title: 'Modern Villa',
     description: 'Contemporary residential design with sustainable features',
-    image: '/images/projects/modern-villa.jpg',
+    image: '/images/hero-bg.jpg',
     category: 'Contemporary',
   },
   {
     title: 'Classical Manor',
     description: 'Traditional architecture with modern amenities',
-    image: '/images/projects/classical-manor.jpg',
+    image: '/images/hero-bg.jpg',
     category: 'Classical',
   },
   {
     title: 'Urban Residence',
     description: 'Sophisticated city living with elegant interiors',
-    image: '/images/projects/urban-residence.jpg',
+    image: '/images/hero-bg.jpg',
     category: 'Contemporary',
   },
 ];
 ---
 
-<Layout title="ArchStudio - Residential Architecture & Design">
+<Layout title="LineSpaceStudio - Residential Architecture & Design">
   <main>
     <Hero 
       title="Crafting Elegant Living Spaces"
@@ -36,26 +37,7 @@ const featuredProjects = [
       backgroundImageAlt="Modern architectural masterpiece with elegant design"
     />
     
-    <!-- Services Section -->
-    <section class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="font-playfair text-4xl mb-12 text-center">Our Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <h3 class="font-playfair text-2xl mb-4">Residential Design</h3>
-            <p>Custom home design that reflects your lifestyle and aesthetic preferences.</p>
-          </div>
-          <div class="text-center">
-            <h3 class="font-playfair text-2xl mb-4">Interior Design</h3>
-            <p>Thoughtfully crafted interiors that combine beauty with functionality.</p>
-          </div>
-          <div class="text-center">
-            <h3 class="font-playfair text-2xl mb-4">Facade & Elevation</h3>
-            <p>Striking exterior designs that create lasting impressions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <Services />
 
     <!-- Featured Projects -->
     <section class="py-20 bg-arch-light">

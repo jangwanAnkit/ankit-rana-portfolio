@@ -81,9 +81,9 @@ Copy code
 Footer
 markdown
 Copy code
-| **ARCHSTUDIO**              | **Quick Links**     | **Contact**                        | **Follow Us**          |
+| **LineSpaceStudio**              | **Quick Links**     | **Contact**                        | **Follow Us**          |
 |-----------------------------|---------------------|-------------------------------------|------------------------|
-| Timeless architecture blend | Home               | Email: info@archstudio.com         | Instagram              |
+| Timeless architecture blend | Home               | Email: info@LineSpaceStudio.com         | Instagram              |
 | modern & classical design.  | Projects           | Phone: +1 (555) 123-4567           | LinkedIn               |
 |                             | Services           | Address: 123 Design Street, City   | Pinterest              |
 |                             | About              |                                     |                        |
