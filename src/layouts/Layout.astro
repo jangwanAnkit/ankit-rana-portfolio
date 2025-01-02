@@ -1,25 +1,31 @@
 ---
 import '@fontsource/playfair-display';
 import '@fontsource/raleway';
-import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { defaultMeta, type MetaData } from '../config/metadata';
 
 interface Props {
   title: string;
+  meta?: Partial<MetaData>;
 }
 
-const { title } = Astro.props;
+const { title, meta = {} } = Astro.props;
+const fullMeta = { ...defaultMeta, ...meta };
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Professional Architect Portfolio - Specializing in Contemporary and Classical Residential Design" />
+    <meta name="description" content={fullMeta.description} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{fullMeta.title}</title>
+    <meta property="og:title" content={fullMeta.title} />
+    <meta property="og:description" content={fullMeta.description} />
+    {fullMeta.image && <meta property="og:image" content={fullMeta.image} />}
   </head>
   <body class="bg-arch-light text-arch-dark font-raleway">
     <Header />
